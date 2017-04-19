@@ -1,0 +1,85 @@
+/* ========= BEGIN STYLE.CSS =========== */
+
+/* These two rules specify that padding, content and border margin measurements are included in the element's width and height */
+
+html {
+  box-sizing: border-box;
+  font-size: .8rem;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  border: 0.25px solid gray; /* Added so I have a better idea of element size and layout*/
+}
+
+/* MOBILE FIRST STYLES */
+body {
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+
+main,
+header,
+footer { /*Alias: container*/
+  margin: 0 auto;
+  max-width: 1200px; /*Sets the maximum possible size of any element within the container | Represents 62.5% of most common screen size of 1920px*/
+}
+
+section { /*Alias: row*/
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 .75em;
+  margin: 0 auto;
+}
+
+article,
+aside { /*Alias: column*/
+  flex-basis: 100%; /*Specifies initial length of flex-item: here assigns full page width*/
+}
+
+/* === LISTS == */
+ul,
+ol {
+  padding-left: 1.75em;
+  padding-right: 0.75em;
+}
+
+li {
+  margin-top: .375em;
+  margin-bottom: .375em;
+}
+
+/* === TYPE === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 3.5rem; line-height: 1.2; letter-spacing: -0.1rem;}
+h2 { font-size: 3.1rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 2.7rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.3rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.9rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+p {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* LARGER SCREEN STYLES */
+@media screen and (min-width:768px) {
+  section {
+    padding: 0;
+  }
+
+  article,
+  aside {
+    flex: 1; /*All items same length, regardless of content - If wanting uniquely sized columns then change/add more to reflect desired colum width percentage*/
+  }
+}
